@@ -2046,4 +2046,13 @@
     <string name="user_image_take_photo" msgid="1280274310152803669">"拍照"</string>
     <string name="user_image_choose_photo" msgid="7940990613897477057">"从图库中选择照片"</string>
     <string name="regulatory_info_text" msgid="5623087902354026557"></string>
+    
+    <!-- Setting checkbox title for root access -->
+    <string name="root_access">Root请求</string>
+    <string name="root_access_warning_title">允许ROOT请求?</string>
+    <string name="root_access_warning_message">允许应用获取ROOT是非常危险且可能影响系统安全的行为!</string>
+    <string name="root_access_none">禁用</string>
+    <string name="root_access_apps">仅应用</string>
+    <string name="root_access_adb">仅ADB</string>
+    <string name="root_access_all">应用和ADB</string>
 </resources>

@@ -15,6 +15,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.bluetooth.DeviceListPreferenceFragment;
 import com.android.settings.util.CMDProcessor;
 
 public class Halo extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -25,6 +26,11 @@ public class Halo extends SettingsPreferenceFragment implements OnPreferenceChan
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_SIZE = "halo_size";
     private static final String KEY_HALO_BUTTON_SHOW = "halo_button_show";
+    private static final String KEY_HALO_NINJA = "halo_ninja";
+    private static final String KEY_HALO_MSGBOX = "halo_msgbox";
+    private static final String KEY_HALO_MSGBOX_ANIMATION = "halo_msgbox_animation";
+    private static final String KEY_HALO_NOTIFY_COUNT = "halo_notify_count";
+    private static final String KEY_HALO_UNLOCK_PING = "halo_unlock_ping";
     private static final String KEY_HALO_COLORS = "halo_colors";
     private static final String KEY_HALO_CIRCLE_COLOR = "halo_circle_color";
     private static final String KEY_HALO_EFFECT_COLOR = "halo_effect_color";
@@ -33,9 +39,14 @@ public class Halo extends SettingsPreferenceFragment implements OnPreferenceChan
 
     private ListPreference mHaloState;
     private ListPreference mHaloSize;
+    private ListPreference mHaloNotifyCount;
+    private ListPreference mHaloMsgAnimate;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private CheckBoxPreference mHaloButtonShow;
+    private CheckBoxPreference mHaloNinja;
+    private CheckBoxPreference mHaloMsgBox;
+    private CheckBoxPreference mHaloUnlockPing;
     private CheckBoxPreference mHaloColors;
     private ColorPickerPreference mHaloCircleColor;
     private ColorPickerPreference mHaloEffectColor;
@@ -71,6 +82,38 @@ public class Halo extends SettingsPreferenceFragment implements OnPreferenceChan
         mHaloButtonShow = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_BUTTON_SHOW);
         mHaloButtonShow.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_BUTTON_SHOW, 1) == 1);
+                
+         mHaloNinja = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_NINJA);
+        mHaloNinja.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_NINJA, 0) == 1);
+
+        mHaloMsgBox = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_MSGBOX);
+        mHaloMsgBox.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_MSGBOX, 1) == 1);
+
+        mHaloUnlockPing = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_UNLOCK_PING);
+        mHaloUnlockPing.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_UNLOCK_PING, 0) == 1);
+
+        mHaloNotifyCount = (ListPreference) prefSet.findPreference(KEY_HALO_NOTIFY_COUNT);
+        try {
+            int haloCounter = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.HALO_NOTIFY_COUNT, 4);
+            mHaloNotifyCount.setValue(String.valueOf(haloCounter));
+        } catch(Exception ex) {
+            // fail...
+        }
+        mHaloNotifyCount.setOnPreferenceChangeListener(this);
+
+        mHaloMsgAnimate = (ListPreference) prefSet.findPreference(KEY_HALO_MSGBOX_ANIMATION);
+        try {
+            int haloMsgAnimation = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.HALO_MSGBOX_ANIMATION, 2);
+            mHaloMsgAnimate.setValue(String.valueOf(haloMsgAnimation));
+        } catch(Exception ex) {
+            // fail...
+        }
+        mHaloMsgAnimate.setOnPreferenceChangeListener(this);
                 
         mHaloColors = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_COLORS);
         mHaloColors.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -125,8 +168,21 @@ public class Halo extends SettingsPreferenceFragment implements OnPreferenceChan
                     ? 1 : 0);
         } else if (preference == mHaloColors) {
             Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.HALO_COLORS, mHaloColors.isChecked() ? 1 : 0);
-        }  
+                    Settings.System.HALO_COLORS, mHaloColors.isChecked()
+                    ? 1 : 0);
+        } else if (preference == mHaloNinja) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_NINJA, mHaloNinja.isChecked()
+                    ? 1 : 0);
+        } else if (preference == mHaloMsgBox) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_MSGBOX, mHaloMsgBox.isChecked()
+                    ? 1 : 0);
+        } else if (preference == mHaloUnlockPing) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_UNLOCK_PING, mHaloUnlockPing.isChecked()
+                    ? 1 : 0);
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -177,6 +233,16 @@ public class Halo extends SettingsPreferenceFragment implements OnPreferenceChan
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.HALO_BUBBLE_TEXT_COLOR, intHex);
+            return true;
+        } else if (preference == mHaloMsgAnimate) {
+            int haloMsgAnimation = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HALO_MSGBOX_ANIMATION, haloMsgAnimation);
+            return true;
+        } else if (preference == mHaloNotifyCount) {
+            int haloNotifyCount = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HALO_NOTIFY_COUNT, haloNotifyCount);
             return true;
         }
         return false;

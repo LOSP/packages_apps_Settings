@@ -3611,6 +3611,7 @@
     <string name="swipe_back_layout_edge_right">右边</string>
     <string name="swipe_back_layout_edge_bottom">底边</string>
     <string name="swipe_back_layout_edge_all">全部</string>
+    <string name="app_swipe_back_label_black">禁用滑动返回手势</string>
     
     <!-- Title for preference that guides the user through creating an unlock gesture [CHAR LIMIT=22] -->
     <string name="unlock_set_unlock_gesture_title">手势</string>

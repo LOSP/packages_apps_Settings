@@ -1364,8 +1364,10 @@ public class InstalledAppDetails extends Fragment
         }
     }
 
-    private void setSwipeBackState(boolean state) {
-        Activity.setSwipeBackBlacklistStatus(mAppEntry.info.packageName, state);
+    private boolean setSwipeBackState(boolean state) {
+        boolean ret = Activity.setSwipeBackBlacklistStatus(mAppEntry.info.packageName, state);
+        forceStopPackage(mAppEntry.info.packageName);
+        return ret;
     }
 
     private int getPremiumSmsPermission(String packageName) {
@@ -1474,7 +1476,9 @@ public class InstalledAppDetails extends Fragment
         } else if (buttonView == mHaloState) {
             setHaloState(isChecked);
         } else if (buttonView == mSwipeBackState) {
-            setSwipeBackState(isChecked);
+            if (!setSwipeBackState(isChecked)) {
+                mSwipeBackState.setChecked(!isChecked); //revert
+            }
         }
     }
 }

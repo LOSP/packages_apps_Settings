@@ -3478,9 +3478,19 @@
     <string name="halo_effect_color_title">涟漪颜色</string>
     <string name="halo_effect_color_summary">需要重启状态栏</string>
 
-    <!-- Traffic -->
+    <!-- Some reset messages -->
+    <string name="status_bar_battery_style_reset_message">重置电池颜色?</string>
+    <string name="status_bar_clock_style_reset_message">重置时钟颜色?</string>
+    <string name="status_bar_style_reset_message">重置状态栏风格?</string>
+    <string name="status_bar_traffic_and_carrier_reset">重置网速和运营商?</string>
+    <string name="status_bar_reset">重置</string>
+
+    <!-- Traffic and Carrier -->
+    <string name="statusbar_traffic_and_carrier">网速和运营商</string>
     <string name="statusbar_show_traffic_title">显示网速</string>
-    <string name="statusbar_show_traffic_summary">在状态栏上显示网速状态</string>
+    <string name="statusbar_traffic_color">网速颜色</string>
+    <string name="statusbar_show_carrier_title">显示运营商</string>
+    <string name="statusbar_carrier_color">运营商颜色</string>
 
     <string name="user_restrictions_title" msgid="7745810037152772035">"应用和内容限制"</string>
     <string name="user_rename" msgid="8523499513614655279">"重命名"</string>

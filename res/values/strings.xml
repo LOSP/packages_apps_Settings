@@ -6139,9 +6139,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_effect_color_title">Effect Color</string>
     <string name="halo_effect_color_summary">Requires statusbar to restart</string>
 
-    <!-- Traffic -->
+    <!-- Traffic and Carrier -->
+    <string name="statusbar_traffic_and_carrier">Traffic and carrier</string>
+    <string name="statusbar_traffic_and_carrier_reset">Reset traffic and carrier?</string>
     <string name="statusbar_show_traffic_title">Show network speed</string>
-    <string name="statusbar_show_traffic_summary">Show network speed on status bar</string>
+    <string name="statusbar_traffic_color_title">Network speed color</string>
+    <string name="statusbar_show_carrier_title">Show carrier label</string>
+    <string name="statusbar_carrier_color">Carrier label color</string>
 
     <!-- User app limits screen title [CHAR LIMIT=35] -->
     <string name="user_restrictions_title">Application and content restrictions</string>

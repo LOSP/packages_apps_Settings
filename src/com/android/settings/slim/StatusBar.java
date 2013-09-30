@@ -51,7 +51,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private PreferenceScreen mClockStyle;
     private PreferenceCategory mPrefCategoryGeneral;
     private CheckBoxPreference mStatusBarBrightnessControl;
-    private CheckBoxPreference mStatusBarShowTraffic;
     private ListPreference mStatusBarAutoHide;
     private CheckBoxPreference mStatusBarQuickPeek;
 
@@ -74,10 +73,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                             Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
         mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
-
-        mStatusBarShowTraffic = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_SHOW_TRAFFIC);
-        mStatusBarShowTraffic.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                            Settings.System.STATUS_BAR_SHOW_TRAFFIC, 1) == 1));
 
         // Start observing for changes on auto brightness
         mStatusBarBrightnessChangedObserver = new StatusBarBrightnessChangedObserver(new Handler());
@@ -154,11 +149,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mStatusBarQuickPeek.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUSBAR_PEEK, value ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarShowTraffic) {
-            value = mStatusBarShowTraffic.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_SHOW_TRAFFIC, value ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

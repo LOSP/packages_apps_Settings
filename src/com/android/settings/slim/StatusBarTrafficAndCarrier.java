@@ -135,7 +135,7 @@ public class StatusBarTrafficAndCarrier extends SettingsPreferenceFragment
     private void resetToDefault() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
         alertDialog.setTitle(R.string.status_bar_reset);
-        alertDialog.setMessage(R.string.statusbar_traffic_and_carrier_reset);
+        alertDialog.setMessage(R.string.status_bar_traffic_and_carrier_reset);
         alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 Settings.System.putInt(getActivity().getContentResolver(),

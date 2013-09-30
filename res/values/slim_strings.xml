@@ -860,6 +860,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_battery_style_reset_message">Reset all battery colors?</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
     <string name="status_bar_style_reset_message">Reset statusbar style?</string>
+    <string name="status_bar_traffic_and_carrier_reset">Reset traffic and carrier?</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>

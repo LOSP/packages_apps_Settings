@@ -35,6 +35,7 @@ import android.view.MenuItem;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.util.CMDProcessor;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -146,6 +147,7 @@ public class StatusBarTrafficAndCarrier extends SettingsPreferenceFragment
                         Settings.System.STATUS_BAR_SHOW_CARRIER, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_BAR_CARRIER_COLOR, -2);
+                CMDProcessor.restartSystemUI();
                 createCustomView();
             }
         });
@@ -176,6 +178,7 @@ public class StatusBarTrafficAndCarrier extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_CARRIER,
                     (Boolean) newValue ? 1 : 0);
+            CMDProcessor.restartSystemUI();
             return true;
         } else if (preference == mCarrierColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
@@ -185,6 +188,7 @@ public class StatusBarTrafficAndCarrier extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER_COLOR,
                     intHex);
+            CMDProcessor.restartSystemUI();
             return true;
         }
         return false;

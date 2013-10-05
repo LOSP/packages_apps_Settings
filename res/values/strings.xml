@@ -6142,7 +6142,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Traffic and Carrier -->
     <string name="statusbar_traffic_and_carrier">Traffic and carrier</string>
     <string name="statusbar_show_traffic_title">Show network speed</string>
-    <string name="statusbar_traffic_color_title">Network speed color</string>
+    <string name="statusbar_traffic_color">Network speed color</string>
     <string name="statusbar_show_carrier_title">Show carrier label</string>
     <string name="statusbar_carrier_color">Carrier label color</string>
 

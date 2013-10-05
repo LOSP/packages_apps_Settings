@@ -2884,8 +2884,10 @@
     <!-- Navigation Bar -->
     <string name="navigation_bar">导航栏</string>
     <string name="navbar_button_cat">导航栏按钮</string>
-    <string name="title_pref_menu_display">菜单键位置</string>
-    <string name="summary_pref_menu_display">你想让菜单键在何处显示?</string>
+    <string name="title_pref_menu_display">菜单键显示</string>
+    <string name="summary_pref_menu_display">你想让菜单键在何时显示?</string>
+    <string name="title_pref_menu_location">菜单键位置</string>
+    <string name="summary_pref_menu_location">你希望菜单键在何处显示?</string>
     <string name="title_pref_navigation_menu_display">菜单键可见度</string>
     <string name="summary_pref_navigation_menu_display">你想让菜单键用什么方式在什么时间显示?</string>
     <string name="navbar_qty_title">导航按键数量</string>
@@ -2930,6 +2932,7 @@
     <string name="glow_times_normal">默认</string>
     <string name="navbar_can_move">横屏显示</string>
     <string name="navbar_can_move_summary">横屏时在底部显示导航条</string>
+    <string name="never_show">永不显示</string>
 
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style">导航栏按钮颜色</string>
@@ -3709,5 +3712,10 @@
     <string name="listview_overshoot_interpolator">快速延迟反弹</string>
     <string name="listview_anticipate_overshoot_interpolator">延迟反弹</string>
     <string name="listview_bounce_interpolator">终点弹球</string>
+
+    <!-- Security & location settings screen, setting check box title. This setting controls whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
+    <string name="lockpattern_settings_enable_error_path_title">显示图案错误</string>
+    <!-- Security & location settings screen, setting check box title. This setting controls whether the dots will be drawn when using the lockscreen pattern.-->
+    <string name="lockpattern_settings_enable_dots_title">显示图案点</string>
 
 </resources>

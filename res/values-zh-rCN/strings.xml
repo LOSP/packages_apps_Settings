@@ -2621,6 +2621,10 @@
     <string name="mod_version">LOSP 版本</string>
     <string name="mod_version_default">未知</string>
 
+    <!-- About phone screen, community support-->
+    <string name="community_support">社区支持</string>
+    <string name="forum_url">http://www.xtzj.com</string>
+
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">启动工具</string>
 

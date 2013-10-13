@@ -5417,6 +5417,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="mod_version">LOSP version</string>
     <string name="mod_version_default">Unknown</string>
 
+    <!-- About phone screen, Community support-->
+    <string name="community_support">Community support</string>
+    <string name="forum_url">http://www.xtzj.com</string>
+
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">Launch Tools</string>
 

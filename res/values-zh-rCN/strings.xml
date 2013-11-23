@@ -2061,4 +2061,14 @@
 
     <!-- Title of permission manager -->
     <string name="permission_manager_title">权限管理</string>
+    
+    <!-- App ops -->
+    <string name="app_ops_summaries_wifi_change">改变 WiFi 状态</string>
+    <string name="app_ops_labels_wifi_change">改变 Wi-Fi 状态</string>
+    <string name="app_ops_summaries_bluetooth_change">改变蓝牙状态</string>
+    <string name="app_ops_labels_bluetooth_change">改变蓝牙状态</string>
+    <string name="app_ops_summaries_data_change">改变移动数据状态</string>
+    <string name="app_ops_labels_data_change">改变移动数据状态</string>
+    <string name="app_ops_summaries_alarm_wakeup">唤醒</string>
+    <string name="app_ops_labels_alarm_wakeup">唤醒</string>
 </resources>

@@ -157,7 +157,6 @@ public class Settings extends PreferenceActivity
             R.id.about_settings,
             R.id.accessibility_settings,
             R.id.print_settings,
-            R.id.nfc_payment_settings,
             R.id.home_settings
     };
 
@@ -584,17 +583,6 @@ public class Settings extends PreferenceActivity
                         || !UserManager.supportsMultipleUsers()
                         || Utils.isMonkeyRunning()) {
                     target.remove(i);
-                }
-            } else if (id == R.id.nfc_payment_settings) {
-                if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC)) {
-                    target.remove(i);
-                } else {
-                    // Only show if NFC is on and we have the HCE feature
-                    NfcAdapter adapter = NfcAdapter.getDefaultAdapter(this);
-                    if (!adapter.isEnabled() || !getPackageManager().hasSystemFeature(
-                            PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
-                        target.remove(i);
-                    }
                 }
             } else if (id == R.id.development_settings) {
                 if (!showDev) {

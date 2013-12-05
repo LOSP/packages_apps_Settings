@@ -235,6 +235,7 @@
     <item msgid="4588829735729884491">"短信"</item>
     <item msgid="886742181977884584">"媒体"</item>
     <item msgid="7924928667052300589">"设备"</item>
+    <item>@string/app_ops_categories_bootup</item>
   </string-array>
   <string-array name="app_ops_summaries">
     <item msgid="4979188868761515915">"粗略位置"</item>
@@ -284,6 +285,7 @@
     <item>@string/app_ops_summaries_bluetooth_change</item>
     <item>@string/app_ops_summaries_data_change</item>
     <item>@string/app_ops_summaries_alarm_wakeup</item>
+    <item>@string/app_ops_summaries_auto_start</item>
   </string-array>
   <string-array name="app_ops_labels">
     <item msgid="6602854600289714121">"位置"</item>
@@ -333,6 +335,7 @@
     <item>@string/app_ops_labels_bluetooth_change</item>
     <item>@string/app_ops_labels_data_change</item>
     <item>@string/app_ops_labels_alarm_wakeup</item>
+    <item>@string/app_ops_labels_auto_start</item>
   </string-array>
   <string-array name="long_press_timeout_selector_titles">
     <item msgid="3511504869290423954">"短"</item>

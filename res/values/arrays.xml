@@ -593,6 +593,7 @@
         <item>Messaging</item>
         <item>Media</item>
         <item>Device</item>
+        <item>@string/app_ops_categories_bootup</item>
     </string-array>
 
     <!-- User display names for app ops codes -->
@@ -644,6 +645,7 @@
         <item>@string/app_ops_summaries_bluetooth_change</item>
         <item>@string/app_ops_summaries_data_change</item>
         <item>@string/app_ops_summaries_alarm_wakeup</item>
+        <item>@string/app_ops_summaries_auto_start</item>
     </string-array>
 
     <!-- User display names for app ops codes -->
@@ -695,6 +697,7 @@
         <item>@string/app_ops_labels_bluetooth_change</item>
         <item>@string/app_ops_labels_data_change</item>
         <item>@string/app_ops_labels_alarm_wakeup</item>
+        <item>@string/app_ops_labels_auto_start</item>
     </string-array>
 
     <!-- Titles for the list of long press timeout options. -->

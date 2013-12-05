@@ -2071,4 +2071,8 @@
     <string name="app_ops_labels_data_change">改变移动数据状态</string>
     <string name="app_ops_summaries_alarm_wakeup">唤醒</string>
     <string name="app_ops_labels_alarm_wakeup">唤醒</string>
+    <string name="app_ops_summaries_auto_start">自启动</string>
+    <string name="app_ops_labels_auto_start">自启动</string>
+    <!-- App ops categories -->
+    <string name="app_ops_categories_bootup">启动</string>
 </resources>

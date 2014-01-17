@@ -134,21 +134,15 @@ public class AppOpsState {
 
     public static final OpsTemplate MESSAGING_TEMPLATE = new OpsTemplate(
             new int[] { AppOpsManager.OP_READ_SMS,
-                    AppOpsManager.OP_READ_MMS,
                     AppOpsManager.OP_RECEIVE_SMS,
                     AppOpsManager.OP_RECEIVE_EMERGECY_SMS,
                     AppOpsManager.OP_RECEIVE_MMS,
                     AppOpsManager.OP_RECEIVE_WAP_PUSH,
                     AppOpsManager.OP_WRITE_SMS,
-                    AppOpsManager.OP_WRITE_MMS,
                     AppOpsManager.OP_SEND_SMS,
-                    AppOpsManager.OP_SEND_MMS,
                     AppOpsManager.OP_READ_ICC_SMS,
                     AppOpsManager.OP_WRITE_ICC_SMS },
             new boolean[] { true,
-                    true,
-                    true,
-                    true,
                     true,
                     true,
                     true,
@@ -172,10 +166,7 @@ public class AppOpsState {
                     AppOpsManager.OP_AUDIO_MEDIA_VOLUME,
                     AppOpsManager.OP_AUDIO_ALARM_VOLUME,
                     AppOpsManager.OP_AUDIO_NOTIFICATION_VOLUME,
-                    AppOpsManager.OP_AUDIO_BLUETOOTH_VOLUME,
-                    AppOpsManager.OP_WIFI_CHANGE,
-                    AppOpsManager.OP_BLUETOOTH_CHANGE,
-                    AppOpsManager.OP_DATA_CONNECT_CHANGE },
+                    AppOpsManager.OP_AUDIO_BLUETOOTH_VOLUME, },
             new boolean[] { false,
                     true,
                     true,
@@ -188,10 +179,7 @@ public class AppOpsState {
                     false,
                     false,
                     false,
-                    false,
-                    true,
-                    true,
-                    true }
+                    false }
             );
 
     public static final OpsTemplate DEVICE_TEMPLATE = new OpsTemplate(
@@ -209,14 +197,9 @@ public class AppOpsState {
                     true,  }
             );
 
-    public static final OpsTemplate BOOTUP_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_BOOT_COMPLETED },
-            new boolean[] { true, }
-            );
-
     public static final OpsTemplate[] ALL_TEMPLATES = new OpsTemplate[] {
             LOCATION_TEMPLATE, PERSONAL_TEMPLATE, MESSAGING_TEMPLATE,
-            MEDIA_TEMPLATE, DEVICE_TEMPLATE, BOOTUP_TEMPLATE
+            MEDIA_TEMPLATE, DEVICE_TEMPLATE
     };
 
     /**

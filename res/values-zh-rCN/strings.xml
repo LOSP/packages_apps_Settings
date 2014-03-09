@@ -2058,4 +2058,7 @@
 
     <!-- Themes settings  -->
     <string name="themes_settings_title">主题</string>
+
+    <!-- Title of permission manager -->
+    <string name="permission_manager_title">权限管理</string>
 </resources>

@@ -4918,4 +4918,7 @@
 
     <!-- Themes settings  -->
     <string name="themes_settings_title">Themes</string>
+    
+    <!-- Title of permission manager -->
+    <string name="permission_manager_title">Permission Manager</string>
 </resources>
